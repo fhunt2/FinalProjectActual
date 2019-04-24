@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         return "";
     }
 
+    /**
+     * Testing
+     * @param savedInstanceState
+     */
+
     //HttpsURLConnection triviaConnection("https://opentdb.com/api.php?amount=10");
     //InputStream triviaStream = triviaConnection.getInputStream();
     @Override
