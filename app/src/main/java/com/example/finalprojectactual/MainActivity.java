@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return xml;
     }
+
+
+
     public String XMLShit(String xml) {
 
         return xml;
