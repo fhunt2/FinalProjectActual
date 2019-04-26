@@ -26,9 +26,11 @@ import java.io.BufferedReader;
 public class MainActivity extends AppCompatActivity {
 
 
+
     public String getApi() {
-        String https_url = "https://opentdb.com/api.php?amount=10";
+        String https_url = "https://opentdb.com/api.php?amount=1";
         URL url;
+        String xml = "";
         try {
             url = new URL(https_url);
             HttpsURLConnection con = (HttpsURLConnection)url.openConnection(); //makes the connection to open tbd
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 throw new RuntimeException("Failed : HTTP error code : " + con.getResponseCode());
             }
             BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));
-            String xml = "";
             String output;
             while ((output = br.readLine()) != null) {
                 xml = xml + output;
@@ -48,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "";
+        return xml;
+    }
+    public String XMLShit(String xml) {
+
+        return xml;
     }
 
     /**
