@@ -14,9 +14,12 @@ import java.net.HttpURLConnection;
 //package javax.net.ssl;
 import javax.net.*;
 import java.net.MalformedURLException;
+import java.nio.Buffer;
 import java.security.cert.Certificate;
 import java.io.*;
 import javax.net.ssl.HttpsURLConnection;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 /**need to add stuff
  *
  */
@@ -28,7 +31,18 @@ public class MainActivity extends AppCompatActivity {
         URL url;
         try {
             url = new URL(https_url);
-            HttpsURLConnection con = (HttpsURLConnection)url.openConnection();
+            HttpsURLConnection con = (HttpsURLConnection)url.openConnection(); //makes the connection to open tbd
+            con.setRequestMethod("GET");
+            if (con.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : " + con.getResponseCode());
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));
+            String xml = "";
+            String output;
+            while ((output = br.readLine()) != null) {
+                xml = xml + output;
+            }
+            con.disconnect();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
