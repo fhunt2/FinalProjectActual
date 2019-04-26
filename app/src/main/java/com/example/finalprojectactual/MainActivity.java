@@ -20,6 +20,7 @@ import java.io.*;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
+import javax.xml.parsers.*;
 /**need to add stuff
  *
  */
@@ -52,20 +53,11 @@ public class MainActivity extends AppCompatActivity {
         return xml;
     }
 
-
-
-    public String XMLShit(String xml) {
-
-        return xml;
-    }
-
     /**
      * Testing
      * @param savedInstanceState
      */
 
-    //HttpsURLConnection triviaConnection("https://opentdb.com/api.php?amount=10");
-    //InputStream triviaStream = triviaConnection.getInputStream();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
