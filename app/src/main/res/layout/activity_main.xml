@@ -23,6 +23,7 @@
         android:layout_marginTop="460dp"
         android:layout_marginEnd="116dp"
         android:layout_marginRight="116dp"
+        android:onClick="questionGenerated"
         android:text="New Question Generator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

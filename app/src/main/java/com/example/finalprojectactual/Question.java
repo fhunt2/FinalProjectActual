@@ -1,5 +1,7 @@
 package com.example.finalprojectactual;
+import android.app.AppComponentFactory;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -9,11 +11,12 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import java.io.*;
+import android.widget.ImageView;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-public class Question extends MainActivity {
+public class Question extends AppCompatActivity {
     /**
      * Query is the question
      * options are all 4 answers so use these for buttons
@@ -57,6 +60,7 @@ public class Question extends MainActivity {
                 Toast.makeText(getApplicationContext(), query,Toast.LENGTH_LONG).show();
             }
         });
+
     }
     /**
      *
@@ -69,4 +73,5 @@ public class Question extends MainActivity {
         }
         return false;
     }
+
 }
