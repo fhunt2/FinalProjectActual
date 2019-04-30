@@ -65,15 +65,17 @@ public class MainActivity extends AppCompatActivity {
         /**
          * functions for button (onClickListener etc)
          */
-        final Context context = getApplicationContext();
+       /** final Context context = getApplicationContext();
         final Button choice = findViewById(R.id.Category);
         final int duration = Toast.LENGTH_LONG;
         choice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Question thisQuestion = new Question(xml);
+                //Question thisQuestion = new Question(xml);
                 Toast.makeText(context, "Category Button",duration).show();
             }
         });
+
+    }*/
     }
 }

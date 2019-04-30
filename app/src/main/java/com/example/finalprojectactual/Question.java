@@ -1,20 +1,18 @@
 package com.example.finalprojectactual;
-
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.ByteArrayInputStream;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import java.io.*;
-import java.sql.BatchUpdateException;
-import java.util.Collections;
-import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 public class Question extends MainActivity {
     /**
      * Query is the question
@@ -52,6 +50,13 @@ public class Question extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final Button question = findViewById(R.id.Quest);
+        question.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), query,Toast.LENGTH_LONG).show();
+            }
+        });
     }
     /**
      *
