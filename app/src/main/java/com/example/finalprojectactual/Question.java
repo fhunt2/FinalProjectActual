@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class Question extends MainActivity {
     /**
@@ -18,7 +19,7 @@ public class Question extends MainActivity {
     private String[] options = new String[4];
     private String wrongOnes;
     private String rightOne;
-    public Question(String xmlFromCarrot) {
+    public Question(String xmlFromCarrot) throws ParserConfigurationException, IOException {
         if (xmlFromCarrot == null) {
             System.out.println("invalid input");
             return;
