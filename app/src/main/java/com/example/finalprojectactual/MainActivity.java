@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
      private View.OnClickListener buttonClicked = new View.OnClickListener() {
          public void onClick(View v)  {
              if (v.getId() == R.id.Quest) {
-                 startActivity(new Intent(MainActivity.this, Question.class));
+                 startActivity(new Intent(MainActivity.this, QuestionActivity.class));
              }
          }
      };
