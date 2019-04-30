@@ -3,6 +3,8 @@ package com.example.finalprojectactual;
 import java.io.ByteArrayInputStream;
 import org.w3c.dom.*;
 import java.io.*;
+import java.util.Map;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -29,6 +31,7 @@ public class Question extends MainActivity {
         ByteArrayInputStream carrot = new ByteArrayInputStream(build2.toString().getBytes("UTF-8"));
         Document dokument = doc.parse(carrot);
         Element root = dokument.getDocumentElement();
-        // from here we can extract stuff apparently.
+        org.w3c.dom.NamedNodeMap parsed = dokument.getAttributes();
+        rightOne = parsed.getNamedItem("Question").toString();
     }
 }
