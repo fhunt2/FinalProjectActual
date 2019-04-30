@@ -14,14 +14,13 @@ public class Question extends MainActivity {
      * options are all 4 answers so use these for buttons
      * rightOne is for the function so dont use it.
      */
-    private String Query;
-    private String[] options;
+    private String query;
+    private String[] options = new String[4];
+    private String wrongOnes;
     private String rightOne;
     public Question(String xmlFromCarrot) {
-        Query = xmlFromCarrot;
-        options = null;
-        rightOne = "Carrot is scared of screwdrivers";
         if (xmlFromCarrot == null) {
+            System.out.println("invalid input");
             return;
         }
         DocumentBuilderFactory build = DocumentBuilderFactory.newInstance();
@@ -32,6 +31,10 @@ public class Question extends MainActivity {
         Document dokument = doc.parse(carrot);
         Element root = dokument.getDocumentElement();
         org.w3c.dom.NamedNodeMap parsed = dokument.getAttributes();
-        rightOne = parsed.getNamedItem("Question").toString();
+        query = parsed.getNamedItem("question").toString();
+        rightOne = parsed.getNamedItem("correct_answer").toString();
+        wrongOnes = parsed.getNamedItem("incorrect_answers").toString();
+        options = wrongOnes.split(", ");
+        options[3] = rightOne;
     }
 }
