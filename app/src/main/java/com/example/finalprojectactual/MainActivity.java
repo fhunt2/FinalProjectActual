@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         choice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Question thisQuestion = new Question(xml);
                 Toast.makeText(context, "Category Button",duration).show();
             }
         });
